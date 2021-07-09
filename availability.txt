@@ -2,7 +2,7 @@ DISPONIBILIDAD
 
 
 #Sicronizar hora
-ntpdate 10.8.35.11
+ntpdate <ntp.server>
 
 
 #Cambio de hora en SO y BIOS.
