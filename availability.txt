@@ -172,19 +172,7 @@ En la sección ignoreip agregar la ip respectiva.
 Reiniciar el servicio service fail2ban restart.
 
 
-REPORTE MENSUAL
 
-	1. Resumen ejecutivo (Seguimiento)
-	2. Estado general de la red (Operación 2)
-	3. Estadísticas Servidores (Disponibilidad)
-	4. Atenciones SLAs (Operación 1)
-	5. Logros TheFence (Solucionador)
-	6. Aislamientos en la red (Seguimiento)
-	7. Comportamientos relevantes detectados(revision 1 y 2)
-	8. Nuevos Comportamientos Inteligencia (3), Solucionador (1)   LO HACe DIEGO
-	9. Acciones y Recomendaciones(Inteligencia y Seguimiento)    SE HACE CON SEGUIMIENTO
-	10. Reporte ejecutivo (Lider Operación)
-Reporte tecnico (Lider Seguridad)
 
 
 
