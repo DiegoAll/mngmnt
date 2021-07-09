@@ -86,9 +86,9 @@ bg
 
 
 #Crear Usuario ssh en Servidores:
-useradd -G wheel,maint -s /bin/bash diego.posada -c "Diego A. Posada"
+useradd -G wheel,maint -s /bin/bash Jhon.Doe -c "Jhon Doe"
 passwd diego.posada
-cd /etc/ssh/ -> nano sshd_config y en allusers añadir diego.posada al final y guardar.
+cd /etc/ssh/ -> nano sshd_config y en allusers añadir Jhon.Doe al final y guardar.
 
 #Para verificar el usuario
 more sshd_config  
@@ -116,10 +116,10 @@ SERVICIOS
 
 #Secure Copy
 Copiar el archivo hacia San Juan Branches
-scp /home/user/db_20181109.sql Jhon.Doe@170.180.190.200:/home/diego.posada
+scp /home/user/db_20211109.sql Jhon.Doe@170.180.190.200:/home/diego.posada
  
 Copiar el archivo hacia San Martin Administrativas
-scp /home/user/db_20181109.sql Jhon.Doe@170.180.190.200:/home/diego.posada
+scp /home/user/db_20211109.sql Jhon.Doe@170.180.190.200:/home/diego.posada
 
 
 
