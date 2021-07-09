@@ -1,27 +1,21 @@
 DISPONIBILIDAD
 
-
 #Sicronizar hora
 ntpdate <ntp.server>
-
 
 #Cambio de hora en SO y BIOS.
 date --set "2020 07 22 07:30"
 hwclock --set "2020 07 22 07:30"
 
-
 #Liberar RAM o caché
 free && sync && echo 3 > /proc/sys/vm/drop_caches && free
-
 
 #Estado disco duro
 df -T -h
 fdisk -l
 
-
 #Mantenimiento espacio en disco de servidores
 find / -size +1G
-
 
 #ver memoria RAM de servidores
 watch -n 2 more /proc/meminfo
@@ -29,25 +23,18 @@ top
 htop
 free
 
-
 #Vaciar un log 
 cat /dev/null > kern.log
 
-
 #Mantenimiento espacio en disco de servidores
-find / -size +1G
 
-find / -size +1G
-
-
-find / -size +1G
 Disco
+find / -size +1G
 
 #A nivel de servicios de red
 systemctl stop NetworkManager
 systemctl disable Networkmanager
 systemctl restart network.service
-
 
 #Parámetros de direccionamiento IP
 ifconfig eth1 69.72.167.1
@@ -55,35 +42,26 @@ ifconfig eth1 netmask 255.255.255.255
 ifconfig eth1 promisc
 ifconfig eth1 hw ether AA:BB:CC:DD:EE:FF
 
-
 #Renombrar interfaz
 ip link set rename8 name eth1000
 ifconfig eth1000 up
 ifconfig eth1000 192.168.10.1/24
 
-
 #Ruta interfaces de red
 /etc/sysconfig/network-scripts
-
 
 #Rutas importantes logs
 /var/log/
 
-
 #Rutas importantes servicios
 /etc/init.d
-
-
 
 #Capturas de tráfico
 tcpdump -i eth0 host 192.168.1.25 -w <pcap_name.pcap> -vv
 
-
 #Procesos background
 &
 bg
-
-
 
 #Crear Usuario ssh en Servidores:
 useradd -G wheel,maint -s /bin/bash Jhon.Doe -c "Jhon Doe"
@@ -95,22 +73,11 @@ more sshd_config
 more /etc/passwd para verificar también
  service sshd reload
 
-
-
-
-
 INSTALACION DE PAQUETES
 
 yum install <package_name>
 
-
-
-
-
-
 SERVICIOS
-
-
 
 #SSH
 
@@ -120,8 +87,6 @@ scp /home/user/db_20211109.sql Jhon.Doe@170.180.190.200:/home/diego.posada
  
 Copiar el archivo hacia San Martin Administrativas
 scp /home/user/db_20211109.sql Jhon.Doe@170.180.190.200:/home/diego.posada
-
-
 
 #NTP
 
@@ -140,22 +105,7 @@ ntpdate -q <NTPdServer_IP>
 #Validate Syncronizations
 ntpstat
 
-#
-
-
-
-
-
-
-
-
-
-
-
-
-
 Los servers tienen psad o fail2ban?
-
 #Bloqueo PSAD:
 iptables -nL (Verificar si está bloqueado)
 Verificar que el servidor no esté bloqueado en: iptables -nL (Chain psad)
@@ -170,9 +120,3 @@ Verificar que el servidor esté agregado en psad: more /etc/psad/auto_dl
 Modificar el archivo de configuración /etc/fail2ban/jail.conf
 En la sección ignoreip agregar la ip respectiva.
 Reiniciar el servicio service fail2ban restart.
-
-
-
-
-
-
