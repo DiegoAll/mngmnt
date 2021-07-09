@@ -115,11 +115,11 @@ SERVICIOS
 #SSH
 
 #Secure Copy
-Copiar el archivo hacia San Martin Sucursales
-scp /home/maint/pf_20181109.sql diego.posada@10.20.250.4:/home/diego.posada
+Copiar el archivo hacia San Juan Branches
+scp /home/maint/pf_20181109.sql diego.posada@170.180.190.200:/home/diego.posada
  
 Copiar el archivo hacia San Martin Administrativas
-scp /home/maint/pf_20181109.sql diego.posada@10.20.250.7:/home/diego.posada
+scp /home/maint/pf_20181109.sql diego.posada@170.180.190.200:/home/diego.posada
 
 
 
