@@ -1,0 +1,190 @@
+DISPONIBILIDAD
+
+
+#Sicronizar hora
+ntpdate 10.8.35.11
+
+
+#Cambio de hora en SO y BIOS.
+date --set "2020 07 22 07:30"
+hwclock --set "2020 07 22 07:30"
+
+
+#Liberar RAM o caché
+free && sync && echo 3 > /proc/sys/vm/drop_caches && free
+
+
+#Estado disco duro
+df -T -h
+fdisk -l
+
+
+#Mantenimiento espacio en disco de servidores
+find / -size +1G
+
+
+#ver memoria RAM de servidores
+watch -n 2 more /proc/meminfo
+top
+htop
+free
+
+
+#Vaciar un log 
+cat /dev/null > kern.log
+
+
+#Mantenimiento espacio en disco de servidores
+find / -size +1G
+
+find / -size +1G
+
+
+find / -size +1G
+Disco
+
+#A nivel de servicios de red
+systemctl stop NetworkManager
+systemctl disable Networkmanager
+systemctl restart network.service
+
+
+#Parámetros de direccionamiento IP
+ifconfig eth1 69.72.167.1
+ifconfig eth1 netmask 255.255.255.255
+ifconfig eth1 promisc
+ifconfig eth1 hw ether AA:BB:CC:DD:EE:FF
+
+
+#Renombrar interfaz
+ip link set rename8 name eth1000
+ifconfig eth1000 up
+ifconfig eth1000 192.168.10.1/24
+
+
+#Ruta interfaces de red
+/etc/sysconfig/network-scripts
+
+
+#Rutas importantes logs
+/var/log/
+
+
+#Rutas importantes servicios
+/etc/init.d
+
+
+
+#Capturas de tráfico
+tcpdump -i eth0 host 192.168.1.25 -w <pcap_name.pcap> -vv
+
+
+#Procesos background
+&
+bg
+
+
+
+#Crear Usuario ssh en Servidores:
+useradd -G wheel,maint -s /bin/bash diego.posada -c "Diego A. Posada"
+passwd diego.posada
+cd /etc/ssh/ -> nano sshd_config y en allusers añadir diego.posada al final y guardar.
+
+#Para verificar el usuario
+more sshd_config  
+more /etc/passwd para verificar también
+ service sshd reload
+
+
+
+
+
+INSTALACION DE PAQUETES
+
+yum install <package_name>
+
+
+
+
+
+
+SERVICIOS
+
+
+
+#SSH
+
+#Secure Copy
+Copiar el archivo hacia San Martin Sucursales
+scp /home/maint/pf_20181109.sql diego.posada@10.20.250.4:/home/diego.posada
+ 
+Copiar el archivo hacia San Martin Administrativas
+scp /home/maint/pf_20181109.sql diego.posada@10.20.250.7:/home/diego.posada
+
+
+
+#NTP
+
+#Install
+yum install ntpdate
+
+#Enable (using systemd)
+systemctl enable ntpdate
+
+#Enable (using init)
+chkconfig ntpdate on
+
+#Test connection with NTPd server
+ntpdate -q <NTPdServer_IP>
+
+#Validate Syncronizations
+ntpstat
+
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+Los servers tienen psad o fail2ban?
+
+#Bloqueo PSAD:
+iptables -nL (Verificar si está bloqueado)
+Verificar que el servidor no esté bloqueado en: iptables -nL (Chain psad)
+cd /etc/psad
+modificar auto.dl (ingresar ip)
+/etc/init.d/psad restart
+ 
+#Agregado en PSAD
+Verificar que el servidor esté agregado en psad: more /etc/psad/auto_dl
+
+#Baneado por fail2ban
+Modificar el archivo de configuración /etc/fail2ban/jail.conf
+En la sección ignoreip agregar la ip respectiva.
+Reiniciar el servicio service fail2ban restart.
+
+
+REPORTE MENSUAL
+
+	1. Resumen ejecutivo (Seguimiento)
+	2. Estado general de la red (Operación 2)
+	3. Estadísticas Servidores (Disponibilidad)
+	4. Atenciones SLAs (Operación 1)
+	5. Logros TheFence (Solucionador)
+	6. Aislamientos en la red (Seguimiento)
+	7. Comportamientos relevantes detectados(revision 1 y 2)
+	8. Nuevos Comportamientos Inteligencia (3), Solucionador (1)   LO HACe DIEGO
+	9. Acciones y Recomendaciones(Inteligencia y Seguimiento)    SE HACE CON SEGUIMIENTO
+	10. Reporte ejecutivo (Lider Operación)
+Reporte tecnico (Lider Seguridad)
+
+
+
