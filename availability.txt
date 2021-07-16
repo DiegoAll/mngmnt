@@ -1,5 +1,17 @@
 DISPONIBILIDAD
 
+#Repositories
+
+#Configuration files of the repositories configured in our system 
+cat /etc/yum.repos.d
+
+#Base repository
+cat CentOS-Base.repo
+
+#Add manual repository
+
+yum install <repositry_Name>
+
 #Sicronizar hora
 ntpdate <ntp.server>
 
