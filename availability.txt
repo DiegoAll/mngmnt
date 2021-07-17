@@ -140,3 +140,8 @@ Verificar que el servidor esté agregado en psad: more /etc/psad/auto_dl
 Modificar el archivo de configuración /etc/fail2ban/jail.conf
 En la sección ignoreip agregar la ip respectiva.
 Reiniciar el servicio service fail2ban restart.
+
+Sources
+https://logico.ar/blog/2019/06/2/instalar-epel-en-centos-7
+https://www.cyberciti.biz/faq/installing-rhel-epel-repo-on-centos-redhat-7-x/
+
