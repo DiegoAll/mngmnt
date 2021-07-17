@@ -1,4 +1,4 @@
-DISPONIBILIDAD
+AVAILABILITY
 
 #Repositories
 
@@ -9,8 +9,16 @@ cat /etc/yum.repos.d
 cat CentOS-Base.repo
 
 #Add manual repository
+yum install <repository_Name>
 
-yum install <repositry_Name>
+
+#EPEL (Extra Packages for Enterprise Linux) It contains extra software packages for business environments.
+#Repositorio de software empresarial
+yum install epel-release
+
+
+yum repolist
+
 
 #Sicronizar hora
 ntpdate <ntp.server>
