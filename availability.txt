@@ -97,7 +97,13 @@ INSTALACION DE PAQUETES
 
 yum install <package_name>
 
+#Configurate hostname on the machine
+hostnamectl
+
 SERVICIOS
+
+
+
 
 #SSH
 
