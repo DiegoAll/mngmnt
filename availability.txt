@@ -70,6 +70,18 @@ ifconfig eth1000 192.168.10.1/24
 #Ruta interfaces de red
 /etc/sysconfig/network-scripts
 
+
+#Port Status
+
+telnet <IP> <port>
+
+nc <IP> <port>
+
+curl -v telnet://<IP>:<Port>
+
+(echo </dev/tcp/<IP>/<Port>) > /dev/null 2>&1 && echo "abierto" || echo "cerrado"
+
+
 #Rutas importantes logs
 /var/log/
 
