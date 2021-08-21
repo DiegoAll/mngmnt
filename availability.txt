@@ -112,6 +112,19 @@ yum install <package_name>
 #Configurate hostname on the machine
 hostnamectl
 
+
+#Checking file integrity
+
+#MD5 (Deprecated algorithm)
+md5sum <file_Name> > MD5sum
+md5sum -c MD5sum
+
+#SHA256
+
+
+#
+
+
 SERVICIOS
 
 
