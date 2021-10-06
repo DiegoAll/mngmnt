@@ -23,6 +23,13 @@ yum repolist
 #Sicronizar hora
 ntpdate <ntp.server>
 
+NTP Servers List
+ntpdate -s 2.co.pool.ntp.org
+
+timedatectl status
+timedatectl list-timezones
+
+
 #Cambio de hora en SO y BIOS.
 date --set "2020 07 22 07:30"
 hwclock --set "2020 07 22 07:30"
